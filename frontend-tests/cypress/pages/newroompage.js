@@ -6,7 +6,7 @@ const numberTextfield = ':nth-child(2) > input'
 const floorTextfield = ':nth-child(3) > input'
 const availableCheckbox = '.checkbox'
 const priceTextfield = ':nth-child(5) > input'
-const featuresTextfield = '[value="ensuite"]'
+const featuresTextfield = ':nth-child(6) > select'
 const saveButtom = '.blue'
 
 // functions /actions
@@ -21,7 +21,7 @@ function performNewroom(cy,category,number, floor ,price , contentToConfirm){
     cy.get(floorTextfield).type(floor)
     cy.get(availableCheckbox).click()
     cy.get(priceTextfield).type(price)
-    cy.get(featuresTextfield).click()
+    cy.get(featuresTextfield).select('penthouse')
     cy.get(saveButtom).click()
     cy.contains(contentToConfirm)
 
